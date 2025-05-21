@@ -37,11 +37,11 @@ function generateCards(cards: CardData[]): void {
 }
 
 // Получение данных и вызов генерации карточек
-fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
+fetch('https://jsonplaceholder.typicode.com/comments?_limit=3')
   .then(response => response.json())
   .then((json: any[]) => {
     const cards: CardData[] = json.map((comment, index) => ({
-      card_name: `Type ${index + 1}`,
+      card_name: `Комментарий от ${comment.name}`,
       card_text: comment.body,
       // image: можно добавить, если появится поле
     }));
