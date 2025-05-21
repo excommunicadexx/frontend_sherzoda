@@ -17,7 +17,7 @@
         <div class="logo"><h4>Jobly</h4></div>
         <nav>
             <a href="#" class="for-recruiters">For Recruiters</a>
-            <a href="#" class="sign-up" id="signUpBtn">Sign Up</a>
+            <a href="#" class="buttonjoin" id="signUpBtn">Sign Up</a>
             <a href="#" class="log-in">Log In</a>
         </nav>
     </div>
@@ -98,26 +98,17 @@
     <section class="info">
         <div class="container">
             <h1>Everything you want to know in one place.</h1>
-            <img src="img/info-image.png" alt="Info Image" class="info-image">
-            <div class="features">
-                <div class="feature">
-                    <hr>
-                    <h3>Professional Profile</h3>
-                    <p>We know finding the right job is stressful, so we’ve made it simple. It only takes a few minutes. Create a free portfolio on briefolio to show your best self and get discovered by recruiter</p>
-                </div>
-                <div class="feature">
-                    <hr>
-                    <h3>Best Portfolio</h3>
-                    <p>We know finding the right job is stressful, so we’ve made it simple. It only takes a few minutes. Create a free portfolio on briefolio to show your best self and get discovered by recruiter</p>
-                </div>
-                <div class="feature">
-                    <hr>
-                    <h3>Powerful Resume</h3>
-                    <p>We know finding the right job is stressful, so we’ve made it simple. It only takes a few minutes. Create a free portfolio on briefolio to show your best self and get discovered by</p>
-                </div>
-            </div>
+            <img id="infoImage" src="img/professional-profile.png" alt="Info Image" class="info-image">
+            <div class="features" id="features-container"></div>
         </div>
     </section>
+    
+    
+    <script>
+function updateImage(src) {
+    document.getElementById("info-Image.png").src = src;
+}
+    </script>
 
     <!-- Connect Section -->
     <section class="connect">

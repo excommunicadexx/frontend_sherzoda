@@ -1,3 +1,4 @@
+
 //OKNO
 // Получаем элементы модального окна и кнопки
 var modal = document.getElementById("signupModal");
@@ -64,6 +65,8 @@ document.getElementById("loginForm").onsubmit = function(event) {
 // Preloader
 window.addEventListener('load', function() {
     document.getElementById('preloader').style.display = 'none';
+
+
 
     // ---  Ваш существующий JavaScript код (модальные окна, слайдер и т.д.)  ---
     // Получаем элементы модального окна и кнопки
@@ -168,3 +171,46 @@ showSlide(currentSlide);
 
 // Устанавливаем интервал для автоматического переключения слайдов (например, каждые 3 секунды)
 setInterval(autoChangeSlide, 3000);
+
+
+
+
+///задания 3
+function generateCards(cards) {
+    const container = document.getElementById('features-container'); 
+    
+    if (!container) {
+      console.error('Элемент с id "features-container" не найден');
+      return;
+    }
+  
+    Object.keys(cards).forEach(key => {
+        
+      const card = cards[key];
+      console.log(card);
+      const cardHTML = `
+        <div class="feature" onclick="updateImage('${card.image}')">
+          <hr class="thick-line">
+          <h3>${card.card_name}</h3>
+          <p>${card.card_text}</p>
+        </div>
+      `;
+      container.insertAdjacentHTML('beforeend', cardHTML);
+    });
+  }
+
+
+fetch('https://jsonplaceholder.typicode.com/posts?_limit=3')
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        
+        const cards = json.map((comment, index) => ({
+            card_name: `Type ${index+1}`,
+            card_text: comment.body,
+        }))
+        generateCards(cards);
+        })
+
+    
+  
